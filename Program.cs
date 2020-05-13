@@ -4,43 +4,92 @@ namespace _02_Variables
 {
     class Program
     {
+
+
+        static void welcomeMessage()
+        {
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("-----------Howdy------------");
+            Console.WriteLine("----------------------------");
+        }
+
+
+        //Method for asking a question for an answer with strings.
+        static string promptForString(string prompt)
+        {
+            Console.WriteLine(prompt);
+            var stringAnswer = Console.ReadLine();
+
+            return stringAnswer;
+        }
+
+        //My attempt at while looping this method. For some reason I can't get the intAnswer to convert to a string.
+
+        // static int promptForInt(string prompt)
+        // {
+        //     Console.WriteLine(prompt);
+        //     int intAnswer;
+        //     var correctInput = Int32.TryParse(Console.ReadLine(), out intAnswer);
+
+        //     while (correctInput != true)
+        //     {
+        //         Console.WriteLine("I said number you dingus");
+        //         var correctInput2 = Int32.TryParse(Console.ReadLine(), out intAnswer);
+
+        //         if (correctInput2 == true)
+        //         {
+        //             return intAnswer;
+        //         }
+        //     }
+
+
+        //     return intAnswer;
+
+        // }
+
         static void Main(string[] args)
         {
+
+            // ----------------------------------------
+
+            //Display welcome message using the method
+            welcomeMessage();
 
             //Declaring the variables for 1. Number of Coffee, 2. Full Name, 3. Today's Date.
             var numberOfCupsOfCoffee = 1;
             var fullName = "Kento Kawakami";
             var today = DateTime.Today;
 
+
             //Writes variables in a sentence inside of the console. 
             Console.WriteLine($"Hi I'm {fullName} and I drank {numberOfCupsOfCoffee} cup of coffee on {today.ToLongDateString()}.");
 
+
             //Asks user to input their name and declares it to userName.
-            Console.WriteLine("What is your first name?");
-            var userName = Console.ReadLine();
+            var firstName = promptForString("What is your first name?");
+
+
             //If the user's name happens to be "Alice" it triggers a special message.
-            if (userName == "Alice")
+            if (firstName == "Alice")
             {
-                Console.WriteLine($"Wow, THE {userName} from {userName} in Wonderland?!");
+                Console.WriteLine($"Wow, THE {firstName} from {firstName} in Wonderland?!");
             }
 
             //If it's not Alice, then it proceeds with the default message.
             else
             {
                 //Responds with a greeting with the inputted name.
-                Console.WriteLine($"Hello {userName}!");
+                Console.WriteLine($"Hello {firstName}!");
                 Console.WriteLine("\n");
             }
 
-            //Asks the user for two numbers.
-            Console.WriteLine("Give me a number ");
+            // Asks the user for two numbers.
+            var firstNumberAsString = promptForString("Give me a number ");
             Console.WriteLine("\n");
 
-            string firstNumberAsString = Console.ReadLine();
 
-            Console.WriteLine("And another... ");
+            var secondNumberAsString = promptForString("And another... ");
             Console.WriteLine("\n");
-            string secondNumberAsString = Console.ReadLine();
 
             //Saves the answers into the variables firstOperand and secondOperand respectively.
             double firstOperand = Double.Parse(firstNumberAsString);
@@ -60,6 +109,13 @@ namespace _02_Variables
             Console.WriteLine($"If you divide {firstOperand} with {secondOperand}, you get {quotient}.");
             Console.WriteLine($"The remainder of {firstOperand} with {secondOperand} is {remainder}.");
 
+
+
+            //---------------------------------------------
+
+
+
         }
+
     }
 }
