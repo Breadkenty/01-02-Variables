@@ -4,15 +4,12 @@ namespace _02_Variables
 {
     class Program
     {
-
-
         static void welcomeMessage()
         {
             Console.WriteLine("----------------------------");
             Console.WriteLine("-----------Howdy------------");
             Console.WriteLine("----------------------------");
         }
-
 
         //Method for asking a question for an answer with strings.
         static string promptForString(string prompt)
@@ -23,35 +20,9 @@ namespace _02_Variables
             return stringAnswer;
         }
 
-        //My attempt at while looping this method. For some reason I can't get the intAnswer to convert to a string.
-
-        // static int promptForInt(string prompt)
-        // {
-        //     Console.WriteLine(prompt);
-        //     int intAnswer;
-        //     var correctInput = Int32.TryParse(Console.ReadLine(), out intAnswer);
-
-        //     while (correctInput != true)
-        //     {
-        //         Console.WriteLine("I said number you dingus");
-        //         var correctInput2 = Int32.TryParse(Console.ReadLine(), out intAnswer);
-
-        //         if (correctInput2 == true)
-        //         {
-        //             return intAnswer;
-        //         }
-        //     }
-
-
-        //     return intAnswer;
-
-        // }
-
         static void Main(string[] args)
         {
-
             // ----------------------------------------
-
             //Display welcome message using the method
             welcomeMessage();
 
@@ -60,14 +31,11 @@ namespace _02_Variables
             var fullName = "Kento Kawakami";
             var today = DateTime.Today;
 
-
             //Writes variables in a sentence inside of the console. 
             Console.WriteLine($"Hi I'm {fullName} and I drank {numberOfCupsOfCoffee} cup of coffee on {today.ToLongDateString()}.");
 
-
             //Asks user to input their name and declares it to userName.
             var firstName = promptForString("What is your first name?");
-
 
             //If the user's name happens to be "Alice" it triggers a special message.
             if (firstName == "Alice")
@@ -86,7 +54,6 @@ namespace _02_Variables
             // Asks the user for two numbers.
             var firstNumberAsString = promptForString("Give me a number ");
             Console.WriteLine("\n");
-
 
             var secondNumberAsString = promptForString("And another... ");
             Console.WriteLine("\n");
@@ -108,14 +75,6 @@ namespace _02_Variables
             Console.WriteLine($"If you multiply {firstOperand} with {secondOperand}, you get {product}.");
             Console.WriteLine($"If you divide {firstOperand} with {secondOperand}, you get {quotient}.");
             Console.WriteLine($"The remainder of {firstOperand} with {secondOperand} is {remainder}.");
-
-
-
-            //---------------------------------------------
-
-
-
         }
-
     }
 }
